@@ -1,6 +1,9 @@
 DynamicForm
 ===========
 
+This is a fork of [upstream](https://github.com/joelmoss/dynamic_form) with [Rails 6.1 patches](https://github.com/joelmoss/dynamic_form/pull/21) applied.
+If a new version after 1.1.4 is published, use that instead because they will most likely include this PR.
+
 DynamicForm holds a few helpers method to help you deal with your Rails3 models, they are:
 
 * `input(record, method, options = {})`
@@ -31,10 +34,10 @@ This plugin allows you to omit the attribute name for specific messages. All you
 is begin the message with a '^' character. Example:
 
     validates_acceptance_of :accepted_terms, :message => '^Please accept the terms of service'
-    
+
 Nigel Ramsay added the ability to specify a proc to generate the message.
 
-    validates_presence_of :assessment_answer_option_id, 
+    validates_presence_of :assessment_answer_option_id,
       :message => Proc.new { |aa| "#{aa.label} (#{aa.group_label}) is required" }
 
     which gives an error message like: Rate (Accuracy) is required
@@ -47,7 +50,7 @@ Installation
 DynamicForm can be installed as a gem in your `Gemfile`:
 
     gem 'dynamic_form'
-    
+
 or as a plugin by running this command:
 
     rails plugin install git://github.com/joelmoss/dynamic_form.git
